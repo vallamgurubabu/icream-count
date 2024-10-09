@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  width: 100vw;
+  padding: 0 20px; /* Add padding for smaller screens */
+}
+.App {
+  height: 50vh;
+  width: 50vh;
+  background-image: url('./img/icream.png');
+  background-size: cover; /* Cover entire container */
+  background-position: center; /* Center background image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.middle-content {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.count-text {
+  font-size: 5vw; /* Responsive font size */
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  width: 40vw; /* Responsive width */
+  border-radius: 10%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 3vw; /* Responsive font size */
+  cursor: pointer;
+  border-radius: 50px;
+}
+button:hover {
+  background-color: #41928a;
+}
+
+button:hover {
+  /* Scale up */
+  transform: scale(1.0);
+}
+
+button:hover {
+  /* Change text color */
+  color: #000;
+}
+
+button:hover {
+  /* Add shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  /* Gradient background */
+  background: linear-gradient(to bottom, #3e8e41, #4CAF50);
+}
+
+
+/* Add media queries for different screen sizes */
+
+@media (max-width: 768px) {
+  .count-text {
+    font-size: 6vw;
   }
-  to {
-    transform: rotate(360deg);
+  .button-container {
+    width: 60vw;
+  }
+  button {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .count-text {
+    font-size: 8vw;
+  }
+  .button-container {
+    width: 80vw;
+    flex-direction: column; /* Stack buttons vertically */
+  }
+  button {
+    font-size: 6vw;
   }
 }

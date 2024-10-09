@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import img from './img/icream.png';
 
 function App() {
+  let [count, setCount] = useState(0);
+
+  const handleDecrease = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    } else {
+      alert("You can't have negative ice cream!");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h1>ICE CREAM COUNT</h1>
+      <p className="count-text">{count}</p> 
+      <div className="App" style={{ backgroundImage: `url(${img})`, opacity: 0.8 }}>
+        <div className="middle-content">
+          
+        </div>
+      </div>
+      <div className="button-container">
+            <button onClick={handleDecrease}>Decrease</button>
+            <button onClick={() => setCount(count + 1)}>Increase</button>
+          </div>
     </div>
   );
 }
