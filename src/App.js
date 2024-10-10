@@ -23,8 +23,9 @@ function App() {
         </div>
       </div>
       <div className="button-container">
-            <button onClick={handleDecrease}>Decrease</button>
             <button onClick={() => setCount(count + 1)}>Increase</button>
+            <button onClick={() => setCount(0)}>Reset</button>
+            <button onClick={handleDecrease}>Decrease</button>
           </div>
     </div>
   );
